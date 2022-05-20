@@ -42,11 +42,14 @@
           background-color: #b0a295;
           border-width: 1px;
           font-size: 12px;
-
         }
 
-        img {
+        img{
+
           object-fit: contain;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .icon {
@@ -70,225 +73,234 @@
         .smImage{
           width:50%;
         }
-        /* Position the image container (needed to position the left and right arrows) */
-  .container {
-    position: relative;
-  }
 
-  /* Hide the images by default */
-  .mySlides {
-    display: none;
-  }
+        .responsive{
+          max-width: 100%;
+          height:auto;
 
-  /* Add a pointer when hovering over the thumbnail images */
-  .cursor {
-    cursor: pointer;
-  }
+        }
 
-  /* Next & previous buttons */
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-
-  /* Container for image text */
-  .caption-container {
-    text-align: center;
-    background-color: #222;
-    padding: 2px 16px;
-    color: white;
-  }
-
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  /* Six columns side by side */
-  .column {
-    float: left;
-    width: 16.66%;
-  }
-
-  /* Add a transparency effect for thumnbail images */
-  .demo {
-    opacity: 0.6;
-  }
-
-  .active,
-  .demo:hover {
-    opacity: 1;
-  }
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+        * {
+  box-sizing: border-box;
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
 }
 /* Style the header */
-header {
+
+
+.header {
   background-color: #7395ae;
   padding: 0px;
   text-align: center;
   color: white;
 }
 
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 8%;
-  height: 700px; /* only for demonstration, should be removed */
-  background: #5d5c61;
-  padding: 20px;
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  background-color: #5d5c61;
+  overflow-x: hidden;
+  padding-top: 150px;
 }
 
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 150px;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
+.sidenav a {
+  padding: 6px 8px 6px 16px;
   text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
 }
 
-li a:hover {
-background-color: #555;
-color: white;
+.sidenav a:hover {
+  color: #f1f1f1;
 }
 
 
-  article {
-    float: left;
-    padding: 20px;
-    width: 87%;
-    background-color: #938e94;
-    height: 700px; /* only for demonstration, should be removed */
-  }
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+  /* Float four columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+  display: table-cell;
+}
+.col-container {
+  display: table; /* Make the container element behave like a table */
+  width: 100%; /* Set full-width to expand the whole page */
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
 
 /* Clear floats after the columns */
-  section::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 32px;
+  text-align: center;
+  background-color: #2d2828;
+}
 
 /* Style the footer */
-  footer {
+  .footer {
     background-color: #557a95;
     padding: 40px;
     text-align: center;
     color: white;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
   }
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-  @media (max-width: 600px) {
-    nav, article {
-      width: 100%;
-      height: auto;
-    }
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
   }
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
   </style>
   </head>
   <body>
 
-    <header>
+    <div class = "header">
       <a href="AddisonPortfolio.html">
       <img src="images\NewNameLogoBlack-06.png"
       width="250" height="125">
-    </header>
+    </div>
 
-     <section>
-      <nav>
-        <ul>
-          <li><a href="AddisonPortfolio.html">Home</a></li>
-          <li><a href="#">Behance</a></li>
-          <li><a href="#">Email</a></li>
-          <li><a href="https://www.linkedin.com/in/addison-baylon-66a215141/">Linkedin</a></li>
-        </ul><br>
+        <div class = "sidenav">
+          <a class "active" href="AddisonPortfolio.html">Home</a>
+          <a href="#">Behance</a>
+          <a href="#">Email</a>
+          <a href="https://www.linkedin.com/in/addison-baylon-66a215141/">Linkedin</a>
+          <br>
+          <a href="DesignPhilosophy.html">Design Philosophy</a></li>
+          <a href="AboutMe.html">About Me</a></li>
+          <a href="Gallery.html">Gallery</a></li>
+          <a href="OngoingWorks.html">Ongoing Works</a></li>
+        </div>
 
-        <ul>
-          <li><a href="DesignPhilosophy.html">Design Philosophy</a></li>
-          <li><a href="AboutMe.html">About Me</a></li>
-          <li><a href="Gallery.html">Gallery</a></li>
-          <li><a href="OngoingWorks.html">Ongoing Works</a></li>
-        </ul>
-      </nav>
-
-      <article>
+      <div class = "main">
         <h1 style="text-align:center;" > Gallery </h1>
 
           <div class="container">
             <div class="mySlides">
               <div class="numbertext">1 / 6</div>
-              <img src="images\Portfolio New\FLIGHT\FLIGHT_BusinessCard_Mockup.png" style="width:100%">
+              <img class="responsive" src="images\Portfolio New\FLIGHT\FLIGHT_BusinessCard_Mockup.png" >
             </div>
 
             <div class="mySlides">
               <div class="numbertext">2 / 6</div>
-              <img src="images\Portfolio New\HotPockets\HotPockets_Mockup.png" style="width:100%">
+              <img class="responsive" src="images\Portfolio New\HotPockets\HotPockets_Mockup.png" >
             </div>
 
             <div class="mySlides">
               <div class="numbertext">3 / 6</div>
-              <img src="images\AddisonBaylon_gif3.gif" style="width:100%">
+              <img class="responsive" src="images\AddisonBaylon_gif3.gif" >
             </div>
 
             <div class="mySlides">
               <div class="numbertext">4 / 6</div>
-              <img src="images\Nix_Logo.png" style="width:100%">
+              <img class="responsive" src="images\Nix_Logo.png" >
             </div>
 
             <div class="mySlides">
               <div class="numbertext">5 / 6</div>
-              <img src="images\AddisonBaylon_AlbumCoverFinal1.png" style="width:100%">
+              <img class="responsive" src="images\AddisonBaylon_AlbumCoverFinal1.png" >
             </div>
 
             <div class="mySlides">
               <div class="numbertext">6 / 6</div>
-              <img src="images\Assignment2Final-01.png" style="width:100%">
+              <img class="responsive" src="images\Assignment2Final-01.png" >
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -298,6 +310,7 @@ color: white;
               <p id="caption"></p>
             </div>
 
+            <div class = "col-container">
             <div class="row">
               <div class="column">
                 <img class="demo cursor" src="images\Portfolio New\FLIGHT\FLIGHT_BusinessCard_Mockup.png" style="width:100%" onclick="currentSlide(1)" alt="FLIGHT Business Card Mockup">
@@ -319,6 +332,7 @@ color: white;
               </div>
             </div>
           </div>
+        </div>
 
           <script>
           let slideIndex = 1;
@@ -350,16 +364,13 @@ color: white;
             captionText.innerHTML = dots[slideIndex-1].alt;
           }
           </script>
-        <div class="center">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+
+  </div>
+
+      <div class = "footer">
+
       </div>
-
-    </article>
-      </section>
-
-      <footer>
-
-      </footer>
 
    </body>
 </html>
