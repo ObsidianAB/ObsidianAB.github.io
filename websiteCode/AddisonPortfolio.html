@@ -45,8 +45,11 @@
         }
 
         img{
+
           object-fit: contain;
-          margin: 0 auto;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .icon {
@@ -83,37 +86,35 @@
   text-align: center;
   color: white;
 }
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #5d5c61;
-  position: fixed;
+
+.sidenav {
   height: 100%;
-  overflow: auto;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #5d5c61;
+  overflow-x: hidden;
+  padding-top: 100px;
 }
 
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
+.sidenav a {
+  padding: 6px 8px 6px 16px;
   text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
 }
 
-.sidebar a.active {
-  background-color: #04AA6D;
-  color: white;
+.sidenav a:hover {
+  color: #f1f1f1;
 }
 
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
 
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
 }
 
   /* Float four columns side by side */
@@ -142,28 +143,19 @@ div.content {
 }
 
 /* Style the footer */
-  footer {
+  .footer {
     background-color: #557a95;
     padding: 40px;
     text-align: center;
     color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
 
-  @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-  }
-
-  @media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
   }
 
 /* Responsive columns */
@@ -185,7 +177,7 @@ div.content {
       width="250" height="125">
     </div>
 
-        <div class = "sidebar">
+        <div class = "sidenav">
           <a class "active" href="AddisonPortfolio.html">Home</a>
           <a href="#">Behance</a>
           <a href="#">Email</a>
@@ -193,10 +185,10 @@ div.content {
         </div>
 
 
-      <div class = "content">
+      <div class = "main">
         <h1 style="text-align:center;" > Welcome to my Portfolio </h1>
 
-        <div class = "container">
+      <div class = "container">
         <div class = "row">
           <div class = "column">
             <div class = "card">
@@ -238,10 +230,10 @@ div.content {
 </div>
 
 
-  <footer>
+  <div class = "footer">
 
    <!-- Footer end. -->
-   </footer>
+ </div>
 
    </body>
 </html>
