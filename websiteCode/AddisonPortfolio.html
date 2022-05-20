@@ -42,10 +42,6 @@
 
         }
 
-        img{
-          object-fit: contain;
-        }
-
         .icon {
           display: inline-block;
           width: 1em;
@@ -146,15 +142,6 @@ div.content {
   clear: both;
 }
 
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-
 /* Style the counter cards */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -170,6 +157,32 @@ div.content {
     text-align: center;
     color: white;
   }
+
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
 
   </style>
   </head>
